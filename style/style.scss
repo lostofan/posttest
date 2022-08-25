@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap');
+@import './variables.scss';
+
+* {
+  box-sizing: border-box;
+}
+p {
+  font-family: $ff;
+}
+
+.app__wrapper {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  align-items: center;
+  position: relative;
+  main {
+    width: 100%;
+  }
+}
+button {
+  background: none;
+  &:hover {
+    cursor: pointer;
+  }
+}
+#posts {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+}
+.post {
+  margin: 10px;
+  padding: 5px;
+  position: relative;
+  width: 100%;
+  @include blockStyle(1rem);
+  &:hover {
+    cursor: pointer;
+  }
+  &__topic {
+    font-weight: 700;
+    font-size: 30px;
+  }
+  &__text {
+    font-size: 14px;
+  }
+}
+.nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  &__pagination {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 14px;
+    .pagination__number {
+      font-size: 1rem;
+      margin: 3px;
+      color: black;
+      background-color: #eee;
+      border: 2px solid #dfd9d9;
+      &_active {
+        color: #eee;
+        background-color: black;
+      }
+    }
+  }
+  &__control {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+}
+.search {
+  display: flex;
+  line-height: 28px;
+  align-items: center;
+  position: relative;
+  max-width: 190px;
+  .search__form {
+    width: 100%;
+    height: 40px;
+    line-height: 28px;
+    padding: 0 1rem;
+    padding-left: 2.5rem;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    outline: none;
+    background-color: #f3f3f4;
+    color: #0d0c22;
+    transition: 0.3s ease;
+    &::placeholder {
+      color: #9e9ea7;
+    }
+    &:focus,
+    input:hover {
+      outline: none;
+      border-color: rgba(234, 76, 137, 0.4);
+      background-color: #fff;
+      box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
+    }
+  }
+  &__icon {
+    position: absolute;
+    left: 1rem;
+    fill: #9e9ea7;
+    width: 1rem;
+    height: 1rem;
+  }
+}
+.addpost {
+  &__topic,
+  &__text {
+    background-color: #eee;
+    border: none;
+    padding: 1rem;
+    font-size: 1rem;
+    width: 13em;
+    border-radius: 1rem;
+    color: lightcoral;
+    box-shadow: 0 0.4rem #dfd9d9;
+    cursor: pointer;
+  }
+  &__button {
+    padding: 1.3em 3em;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    &:hover {
+      background-color: #23c483;
+      box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+      color: #fff;
+      transform: translateY(-7px);
+    }
+    &:active {
+      transform: translateY(-1px);
+    }
+  }
+}
+
+.modal__wrapper {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba($color: #000000, $alpha: 0.5);
+  .modal {
+    position: relative;
+    height: 50%;
+    width: 70%;
+    &__post {
+      @include blockStyle(1rem);
+      margin-bottom: 15px;
+      width: 100%;
+    }
+    &__topic {
+      font-size: 24px;
+    }
+    &__message {
+      font-size: 20px;
+      margin-bottom: 50px;
+    }
+    &__comments {
+      scrollbar-color: #6969dd;
+      height: 40%;
+      width: 100%;
+      list-style-type: none;
+      @include blockStyle(1rem);
+      width: 60%;
+      margin: 0 auto;
+      overflow: auto;
+      font-family: $ff;
+      &::-webkit-scrollbar {
+        opacity: 0;
+      }
+      &::-webkit-scrollbar-track {
+        background-color: #dfd9d9;
+        border-radius: 0 0 100px 0;
+      }
+      &::-webkit-scrollbar-thumb {
+        background-color: black;
+        border-radius: 100px;
+      }
+      .comments__header {
+        text-align: center;
+      }
+      .comment {
+        background-color: #eee;
+        padding: 1rem;
+        border: 3px solid #dfd9d9;
+        border-radius: 1rem;
+        font-size: 2rem;
+        margin-bottom: 15px;
+        &__email {
+          font-size: 1.2rem;
+        }
+        &__message {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.closeBtn {
+  color: red;
+  padding: 5px;
+  font-weight: 700;
+  font-size: 30px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: none;
+}

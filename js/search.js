@@ -1,4 +1,4 @@
-import { getPaginationNumbers, setPage } from "./pagination.js";
+import { getPaginationNumbers, setPage } from "../js/pagination.js";
 
 
 const searchForm = document.getElementById('search');
@@ -6,7 +6,7 @@ searchForm.addEventListener('input', (event) => searchStr(event))
 
 function searchStr(event) {
     let str = event.target.value;
-    const pagination = document.querySelector('.nav__numbers');
+    const pagination = document.querySelector('.pagination__numbers');
     pagination.hidden = true;
     if (str === '') {
         pagination.hidden = false;

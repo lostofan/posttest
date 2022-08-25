@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/style.css">
+    <title>Test Task</title>
+</head>
+<body>
+    <div class="app__wrapper">
+        <nav class="nav">
+            <div class="nav__pagination">
+                <div class="pagination__numbers">
+                    
+                </div>
+            </div>
+            <div class="nav__control">
+                <div class="search">
+                    <svg class="search__icon" aria-hidden="true" viewBox="0 0 24 24"><g><path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path></g></svg>
+                    <input class="search__form" type="search" id="search" placeholder="Ищите посты">
+                </div>
+                <div class="addpost">
+                    <input class="addpost__topic" type="text" name="" id="" placeholder="Введите тему">
+                    <input class="addpost__text" type="text" name="" id="" placeholder="Введите сообщение">
+                    <button class="addpost__button" type="submit" disabled>Отправить</button>
+                </div>
+            </div>
+        </nav>
+        <main>
+            <ul id="posts">
+            </ul>  
+        </main>
+    </div>
+    <script src="../js/script.js" defer type="module"></script>
+    <script src="../js/search.js" defer type="module"></script>
+</body>
+</html>

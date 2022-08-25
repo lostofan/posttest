@@ -1,0 +1,9 @@
+$ff: 'Manrope', sans-serif;
+
+@mixin blockStyle($fsize) {
+  background-color: #eee;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 0.4rem #dfd9d9;
+  font-size: $fsize;
+}

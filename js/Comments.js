@@ -7,6 +7,12 @@ export function createCommentsBlock(commentsList, modal) {
     const commentsBlock = document.createElement('ul');
     commentsBlock.classList.add('modal__comments', 'comments');
 
+    const commentsHeader = document.createElement('h1');
+    commentsHeader.classList.add('comments__header');
+    commentsHeader.innerHTML = "Комментарии";
+
+    commentsBlock.appendChild(commentsHeader);
+
     commentsList.forEach(elem => {
         const commentItem = document.createElement('li');
         commentItem.classList.add('comment')

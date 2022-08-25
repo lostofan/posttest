@@ -1,21 +1,21 @@
-const navNumbers = document.querySelector('.nav__numbers');
+const paginationNumbers = document.querySelector('.pagination__numbers');
 export let activePage;
 
-const addNavNumbers = (counter) => {
+const addPaginationNumbers = (counter) => {
     const numberItem = document.createElement('button');
-    numberItem.className = 'nav__number';
+    numberItem.className = 'pagination__number';
     numberItem.innerHTML = counter;
     numberItem.onclick = () => setPage(counter);
-    navNumbers.appendChild(numberItem);
+    paginationNumbers.appendChild(numberItem);
 }
 
 export function getPaginationNumbers() {
-    navNumbers.innerHTML = "";
+    paginationNumbers.innerHTML = "";
     const postItems = document.querySelectorAll('.post');
     let postCount = postItems.length
     let pageCount = Math.ceil(postCount / 10);
     for (let i = 1; i <= pageCount; i++) {
-        addNavNumbers(i);
+        addPaginationNumbers(i);
     }
 }
 export function setPage(pageNumber = 1) {
@@ -33,9 +33,9 @@ export function setPage(pageNumber = 1) {
 }
 
 function setNumberActive(activePage) {
-    const paginationNumbers = document.querySelectorAll('.nav__number');
+    const paginationNumbers = document.querySelectorAll('.pagination__number');
     for (let i = 0; i < paginationNumbers.length; i++) {
-        paginationNumbers[i].classList.remove("nav__number_active");
+        paginationNumbers[i].classList.remove("pagination__number_active");
     }
-    paginationNumbers[activePage - 1].classList.add('nav__number_active')
+    paginationNumbers[activePage - 1].classList.add('pagination__number_active')
 }
