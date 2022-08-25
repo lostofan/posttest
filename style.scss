@@ -8,13 +8,20 @@
 button {
   background: none;
   border: 2px solid black;
+  &:hover {
+    cursor: pointer;
+  }
+}
+#posts {
+  list-style-type: none;
+  padding: 0;
 }
 .post {
   border: 1px solid black;
   margin: 10px;
   padding: 5px;
   position: relative;
-  &__article {
+  &__topic {
     font-weight: 700;
     font-size: 30px;
   }
@@ -29,4 +36,19 @@ button {
     top: 0;
     right: 0;
   }
+}
+.nav {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 14px;
+  &__number {
+    &_active {
+      color: red;
+      background-color: blue;
+    }
+  }
+}
+
+.hidden {
+  display: none;
 }
