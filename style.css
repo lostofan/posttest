@@ -25,6 +25,9 @@ button:hover {
   padding: 5px;
   position: relative;
 }
+.post:hover {
+  cursor: pointer;
+}
 .post__topic {
   font-weight: 700;
   font-size: 30px;
